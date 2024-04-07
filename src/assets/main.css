@@ -1,11 +1,15 @@
 @import './base.css';
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  /*max-width: 1280px;*/
+  /*margin: 0 auto;*/
+  /*padding: 2rem;*/
 
-  font-weight: normal;
+  /*font-weight: normal;*/
+
+
+  margin: 0;
+  padding: 0;
 }
 
 a,
@@ -21,15 +25,16 @@ a,
   }
 }
 
+/* 是一个 CSS 媒体查询，它表示当屏幕宽度至少为 1024 像素时，应用该媒体查询内的 CSS 样式。 */
 @media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+  /*body {*/
+  /*  display: flex;*/
+  /*  place-items: center;*/
+  /*}*/
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+  /*#app {*/
+  /*  display: grid;*/
+  /*  grid-template-columns: 1fr 1fr;*/
+  /*  padding: 0 2rem;*/
+  /*}*/
 }
