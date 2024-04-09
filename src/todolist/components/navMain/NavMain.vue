@@ -18,8 +18,13 @@ export default defineComponent({
         complete: false
       }
     ])
+    let del = (item, index) => {
+      console.log(item)
+      console.log(index)
+    }
     return {
-      list
+      list,
+      del
     }
   }
 })
@@ -27,12 +32,33 @@ export default defineComponent({
 
 <template>
   <div v-for="(item, index) in list" :key="index">
-    <input type="checkbox" v-model="item.complete">
-    {{item.title}}
-    <button>删除</button>
+    <div class="item">
+      <input type="checkbox" v-model="item.complete">
+      {{item.title}}
+      <button class="del" @click="del(item, index)">删除</button>
+    </div>
   </div>
 </template>
 
 <style scoped>
-
+.item {
+  height: 35px;
+  line-height: 35px;
+  position: relative;
+  width: 160px;
+  cursor: pointer;
+  button {
+    position: absolute;
+    right: 20px;
+    top: 8px;
+    display: none;
+    z-index: 99;
+  }
+  &:hover {
+    background: #dddddd;
+    button {
+      display: block;
+    }
+  }
+}
 </style>
