@@ -3,27 +3,18 @@ import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
   name: 'NavMain',
-  setup() {
-    let list = ref([
-      {
-        title: '吃饭',
-        complete: false
-      },
-      {
-        title: '睡觉',
-        complete: false
-      },
-      {
-        title: '敲代码',
-        complete: false
-      }
-    ])
+  props: {
+    list: {
+      type: Array,
+      required: false
+    }
+  },
+  setup(props, ctx) {
     let del = (item, index) => {
       console.log(item)
       console.log(index)
     }
     return {
-      list,
       del
     }
   }

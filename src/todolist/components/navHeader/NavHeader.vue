@@ -2,10 +2,10 @@
 import { defineComponent, ref } from 'vue'
 export default defineComponent({
   name: 'navHeader',
-  setup() {
+  setup(props, ctx) {
     let value = ref('')
     let enter = () => {
-      console.log(value.value)
+      ctx.emit('add', value.value)
     }
     return {
       value,
