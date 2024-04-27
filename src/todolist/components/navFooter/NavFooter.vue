@@ -1,16 +1,23 @@
 <script setup>
-import { ref } from 'vue'
-let isComplete = ref(1)
+
+import { computed } from 'vue'
+
+let isComplete = computed(() => {
+  return props.list.filter((item) => {
+    return item.complete === true
+  }).length
+})
 
 let clear = () => {
-  console.log('clear')
+  emits('clear')
 }
-defineProps({
+const props = defineProps({
   list: {
     type: Array,
     required: true
   }
 })
+const emits = defineEmits(['clear'])
 </script>
 
 <template>

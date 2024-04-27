@@ -1,5 +1,5 @@
 <script>
-import { defineComponent, ref } from 'vue'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'NavMain',
@@ -9,10 +9,10 @@ export default defineComponent({
       required: false
     }
   },
-  setup(props, ctx) {
-    let del = (item, index) => {
-      console.log(item)
-      console.log(index)
+  emits: ['del'],
+  setup(_, ctx) {
+    let del = (_, index) => {
+      ctx.emit('del', index)
     }
     return {
       del
